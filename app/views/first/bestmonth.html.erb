@@ -1,0 +1,85 @@
+
+<!--BEST AUTHOR PAGE-->
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+
+    letter-spacing: 5px;
+}
+
+.w3-lobster {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+</style>
+
+<script>
+
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+
+<body>
+
+<!-- Header -->
+
+  <div class=" w3-padding-large w3-opacity" >
+   <br>
+   <br>
+   <br>
+   <img src="/best_post.JPG" style="margin-left:450px;">
+  </div>
+  
+   <section class="ShowPage">
+    
+     <div class="w3-card-4">
+     <br>
+     <br>
+     <br>
+      
+    <img src="<%= @best.image.url %>" class="w3-border" alt="Norway" style="padding:4px;width:25%">
+     
+     <br>
+     <p>
+         <br>
+      <strong>Title:</strong><br>
+      <%= @best.title %>
+    </p>
+    
+    <p>
+        <br>
+      <strong>Content:</strong><br>
+      <%= @best.content %>
+    </p>
+    <br><br>
+     </div>
+    
+    <%= @records_array %>
+    
+   
+</div>
+
+</section>
+
+
+  
+ 
+</header>

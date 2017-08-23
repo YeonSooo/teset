@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <!--# 내 css링크 임의.-->
+  <link rel="stylesheet" herf="application.css">
+  
+  
+  
+  
+  
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+.main{
+   background-image: url('back3.jpg');
+   background-repeat: no-repeat;
+   background-size: 60%;
+   background-position: center; 
+  
+}
+.white{
+  color: #EAEAEA;
+}
+
+</style>
+<body>
+    
+     <section id="cover">
+    <h2 class="sr-only">멋쟁이사자처럼 소모임을 소개합니다!</h2>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <section class="carousel-item active">
+          <br>
+          <h4 class="carousel__title mb-4" lang="en"><br><br>UNI PIECE</h4><br>
+          <p class="carousel__text mb-4">청년들의 자유로운 예술 공유를 지향합니다.</p>
+        </section>
+        <section class="carousel-item">
+          <br>
+          <h4 class="carousel__title mb-4" lang="en"><br>  ART . </h4><br>
+          <p class="carousel__text mb-4">나의 작품 & 너의 작품 </p>
+        </section>
+        <section class="carousel-item">
+          <br>
+          <h4 class="carousel__title mb-4" lang="en"><br> DUKSUNG</h4><br>
+          <p class="carousel__text mb-4">-유림.미래.연수.재원-</p>
+        </section>
+      </div>
+    </div>
+  </section>
+  <!-- // Cover -->
+  
+   <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="section__title mb-3">
+          <span class="section__category mb-2" lang="en">About</span>
+          멋쟁이사자처럼 UNI_PIECE
+        </h2>
+      </header>
+      <div class="about__data d-flex justify-content-center mb-3">
+        <p class="about__datum px-4 px-sm-5">
+          <strong class="about__number text-primary">약8900명</strong>
+          예술대학생
+        </p>
+        <p class="about__datum px-4 px-sm-5">
+          <strong class="about__number text-primary">9.8개</strong>
+          인당 평균 작품수
+        </p>
+       <!-- <p class="about__datum px-4 px-sm-5">
+          <strong class="about__number text-primary">102</strong>
+          프로젝트 -->
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-10 col-lg-8 push-md-1 push-lg-2">
+          <p class="section__text">
+            예술대 학생들이 재학 중 만드는 작품 수는 평균 9.8개에 달합니다.<br>
+            그러나 그 작품들이 공유되고, 판매될 수 있는 플랫폼은 극히 적습니다.<br>
+            청년 예술가들의 자유로운 예술 활동을 지원하며, 이들의 작품이 좀 더 널리 알려질 수 있도록 힘쓰겠습니다.
+      
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- // About -->
+  
+  
+  
+
+
+
+
+ <!-- Main -->
+  <main class="main">
+  	<div class="container">
+  		<section class="posts">
+  			<h2 class="sr-only"></h2>
+  			<ul class="post__list">
+  				<li class="post__item mb-5">
+  					<div class="row">
+  						<a = class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+  							<h4 class="post__title mb-4">
+  							  <br>
+  							  <br>
+  								멋쟁이 사자처럼<br>
+  								덕성여대<br>
+  								예술 공유 프로젝트 
+  							</h4>
+  							<p class="post__text">유림.미래.연수.재원 <em></em>  —</p>
+  							<p class="post__date">8.19, 2017</p>
+  						</a>
+  					</div>
+  				</li>
+  				
+  				<li class="post__item mb-5">
+  					<div class="row">
+  						<a = class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+  							<h4 class="post__title mb-4 white">
+  								예술대 학생들의<br>
+  								예술품 공유<br>
+  							  플랫폼
+  							</h4>
+  							
+  						</a>
+  					</div>
+  				</li>
+  				
+  				<li class="post__item mb-5">
+  					<div class="row">
+  						<a = class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+  							<h4 class="post__title mb-4 white">
+  								충분히 예뻐요..<br>
+  								너의 졸작<br>
+  								나의 졸작<br>
+  						
+  							</h4>
+  							<p class="post__text white">둘곳없어 울지말아요..<em></em>  </p>
+  						
+  						</a>
+  					</div>
+  				</li>
+  				
+  				<li class="post__item">
+  					<div class="row">
+  						<a = class="d-block col-12 col-md-10 col-lg-6 push-md-1 push-lg-3 py-4">
+  							<h4 class="post__title mb-4 white">
+  							  완벽해<br>
+  								너의 과제<br>
+  								나의 과제<br>
+  								
+  							</h4>
+  							<p class="post__text">내새끼 <em></em>  </p>
+  						
+  						</a>
+  					</div>
+  				</li>
+  			</ul>
+  		</section>
+  	</div>
+  </main>
+  <!-- // Main -->
+
+<footer class="footer py-5">
+   
+    <h2 class="author__name mb-2 mt-3">UNI_PIECE</h2>
+    <p class="author__text mb-3" style="color:gray;">
+     훌륭한 예술가에게는 모든 자연이 아름답다. <br>
+     그의 눈동자는 모든 외면의 진실을 대담하게 받아들여 <br>
+     마치 책을 펼쳐서 읽듯이 자연에서 온갖 내면적인 진실을 읽어낸다.<br>
+     -로댕
+    </p>
+     <div class="w3-panel w3-large">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+    <p class="copyright">&copy; 2017 Likelion. All Rights Reserved.</p>
+  </footer>
+ 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--#부트스트랩 cdn -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  
+    
+</body>

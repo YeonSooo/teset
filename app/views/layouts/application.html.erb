@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  
+  
+  <!--#부트스트랩 cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <!--# 내 css링크 임의.-->
+  <link rel="stylesheet" herf="application.css">
+  
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+  .no-uline a:link { 
+    text-decoration:none; 
+    color:black;
+  }
+  
+  .no-uline a:visited { 
+    text-decoration:none; 
+    color:black;
+  }
+</style>
+
+<body>
+  <header>
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-padding w3-card-2">
+        <a href="/" class="w3-bar-item " style="text-decoration:none">UNI PIECE</a>
+        <!-- Right-sided navbar links. Hide them on small screens -->
+        <div class="w3-right w3-hide-small no-uline">
+          <li class="w3-bar-item w3-button w3-large"><%= link_to 'SHOW and POST PIECE', posts_path%></li>
+          <li class="w3-bar-item w3-button w3-large"><%= link_to 'AUTHOR OF THIS MONTH', first_bestmonth_path %></li>
+          <% if signed_in? %><!-- 드롭다운 설치해서 마이 페이지와 탈퇴하기 넣기-->
+            <li class="w3-bar-item w3-button w3-large"><%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %></li>
+            
+             <% if user_signed_in? %> 
+               
+                 <li class="w3-bar-item w3-button w3-large"><%= link_to 'MYACCOUNT', first_myaccount_path %></li>
+             <% end %>
+            
+            <!--드롭 박스-->
+           
+           
+             <div class="w3-dropdown-hover">
+                <% if user_signed_in? %> 
+                <button class="w3-button"><%= current_user.name %>님</button>
+                <% end %>
+                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                 <li class="w3-bar-item w3-button w3-large"><%= link_to('MYPAGE', edit_user_registration_path)%></li>
+                 <li class="w3-bar-item w3-button w3-large"><%= link_to 'MYPOST', first_mypost_path %></li>
+             </div>
+
+            
+            <!---->
+          <% else %>
+            <li class="w3-bar-item w3-button"><%= link_to('LOG IN', new_user_session_path, :class => 'no-uline') %></li>
+            <li class="w3-bar-item w3-button"><%= link_to('SIGN UP', new_user_registration_path)%></li>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </header>
+<%= yield %>
+
+<!-- #########################################################-->
+
+
+<!-- Cover -->
+  <!-- Footer -->
+
+  
+<!--#jquerycdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--#부트스트랩 cdn -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!--  #############################################################

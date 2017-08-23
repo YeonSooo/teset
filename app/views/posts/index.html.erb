@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+.w3-main{
+    margin-top: 5%;
+}
+.new_post{
+    text-align: right;
+    margin: 0% 2% 5% 0% ;
+}
+
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+
+  <!-- Header -->
+  <header id="portfolio">
+     <div class="container">
+     </div>
+  </header>
+  
+    <br>
+    <br>
+    <p id="notice"><%= notice %></p>
+
+      <!-- First Photo Grid-->
+      <div class="w3-row-padding ">   
+      
+       <% @posts.each do |post| %>
+        <div class="w3-third w3-container w3-margin-bottom w3-col m4 w3-center">
+           <% if post.image.url %>
+             <img src="<%= post.image.url %>" width="100%">
+           <% end %>
+         
+          <br>       
+          
+          <div class="w3-container w3-white">
+            <br>
+            <p><b><%= post.title %></b></p>
+            <p><%= post.content %></p>
+            
+            <p><%= link_to '글 보기', post_path(post.id) %></p>
+            
+            <br>
+             
+             <p>
+             <% if current_user.id == post.user_id %>
+                <%= link_to '삭제', post_path(post.id), method: 'delete', data: {confirm: "삭제 하시겠습니까?"} %> 
+             <% end %>
+             </p>
+             
+             <p> <%= post.likes.size %> ♥
+                  <% if user_signed_in? %>
+                    <% if current_user.is_like?(post) %> 
+                      <%= link_to "좋아요 취소", post_like_path(post), method: "post" %> 
+                    <% else %>
+                       <%= link_to "좋아요", post_like_path(post), method: "post" %> 
+                    <% end %>
+                  <% end %>
+             </p>
+          
+          </div>
+        
+        </div>
+        <% end %>  
+    </div>
+     
+     
+    <center>
+        <%= will_paginate @posts %>
+        
+    </center>
+    
+    
+    
+    
+    
+    
+    
+    <br>
+    <% if signed_in? %>
+    <div class="new_post">
+        <button class="w3-button w3-circle w3-green"><%= link_to '+', new_post_path %></button>
+    </div>
+    <%end%>
+
+<!-- End page content -->
+</div>
+</body>
+</html>

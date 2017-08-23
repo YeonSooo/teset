@@ -1,0 +1,52 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.edit_page{
+    
+    text-align: center;
+    padding: 10% auto;
+    
+}
+.ShowPage{
+    text-align: center;
+    padding: 10% auto;
+}
+.LoginPage{
+    text-align: center;
+    padding: 10% auto;
+}
+
+.signup_view{
+    text-align: center;
+    padding: 10% auto;
+}
+
+.post_view{
+    text-align: center;
+    padding: 15% auto;
+}
+.write_post{
+    text-align: right;
+    padding: 5% 10%;
+}
+
+.new_post{
+    text-align: center;
+    padding: 10% auto;
+}
+
+.mypage_index{
+    text-align: center;
+    padding: 10% auto;
+}
+
+.cancel_account{
+    text-align: right;
+}
+.back{
+    text-align: center;
+}
+
+
+// @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);

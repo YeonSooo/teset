@@ -1,0 +1,46 @@
+<style>
+.c {
+    background:#e8e8e8;
+    padding:20px;
+    margin:20px;
+    position:relative;
+    border-radius:5px;
+}
+.c:nth-of-type(odd):after {
+    border-top:20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #e8e8e8;
+    border-left:none;
+    right:auto;
+    left:-20px;
+}
+.c:after {
+    content:"";
+    width:0;
+    height:0;
+    border-top:20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #e8e8e8;
+    right:-20px;
+    position: absolute;
+    top:10px;
+}
+</style>
+
+<li class="c" id="comment-<%=comment.id%>">
+    <div class="collection-item">
+        <span class="right"><%= comment.created_at %></span><br>
+        <span class="title"><strong>작성자 : </strong><%= comment.nickname %></span><br>
+        <p><%= comment.content %></p><br>
+        
+    
+        <% if comment.user_id == current_user.id %>
+        
+        <%= link_to "삭제", comment_path(comment),
+                            method: :delete,
+                            remote: true,
+                            data: {confirm: "정말로 삭제하시겠습니까?"} %>
+                            
+        <% end %>
+    </div>
+</li>

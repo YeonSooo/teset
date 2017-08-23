@@ -1,0 +1,159 @@
+<!--<br><br>-->
+<!--<center>-->
+<!--  <br>-->
+<!--  <br>-->
+  
+  <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  
+
+<!--<h2 class="w3-center">SIGN UP</h2>-->
+ 
+<!--<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>-->
+<!--  <%= devise_error_messages! %>-->
+  
+<!--  <div class="field">-->
+<!--    <%= f.label :email %><br />-->
+<!--    <%= f.email_field :email, autofocus: true %>-->
+<!--  </div>-->
+  
+<!--  <div class="field">-->
+<!--    <%= f.label :name %><br />-->
+<!--    <%= f.text_field :name %>-->
+<!--  </div>-->
+    
+<!--  <div class="field">-->
+<!--    <%= f.label :nickname %><br />-->
+<!--    <%= f.text_field :nickname %>-->
+<!--  </div>-->
+    
+<!--  <div class="field">-->
+<!--    <%= f.label :avatar %><br />-->
+<!--    <%= f.file_field :avatar %>-->
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :password%>-->
+<!--    <% if @minimum_password_length %>-->
+<!--    <em>(<%= @minimum_password_length %> characters minimum)</em>-->
+<!--    <% end %><br />-->
+<!--    <%= f.password_field :password, autocomplete: "off" %>-->
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :password_confirmation %><br />-->
+<!--    <%= f.password_field :password_confirmation, autocomplete: "off" %>-->
+<!--  </div>-->
+<!--<br>-->
+
+  <!--<button type="submit" class="btn btn-default">회원가입</button>-->
+<!--  <div class="actions">-->
+<!--    <%= f.submit "가입하기" %>-->
+<!--  </div>-->
+  
+<!--<% end %>-->
+
+<!--<%= render "devise/shared/links" %>-->
+
+<!--</center>-->
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Spectre sign up form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+    <!--  -->
+      <h1 class="logo__text">UNIPIECE</h1>
+    </div>
+    
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to UNIPIECE</h1>
+      <h2 class="heading--secondary">Are you ready to join the PIECE?</h2>
+    </div>
+    
+    <div class="thumbnail__links">
+      <ul class="list-inline m-b-0 text-center">
+        <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+        <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+        <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+  
+<div class="container__child signup__form">
+  
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <%= f.email_field :email, autofocus: true ,:class => 'form-control'%>
+  </div>
+  
+  <div class="form-group">
+    <label for="name">Name</label>
+    <%= f.text_field :name ,:class => 'form-control'%>
+  </div>
+    
+  <div class="form-group">
+   
+    <label for="nickname">Nickname</label>
+    <%= f.text_field :nickname  ,:class => 'form-control'%>
+  </div>
+  
+  <div class="form-group">
+    <label for="avatar">Avatar</label>
+    <%= f.file_field :avatar %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :password%>
+    <label for="password">Password</label>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" ,:class => 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+     <label for="password_confirmation">Password_confirmation</label>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,:class => 'form-control'%>
+  </div>
+  
+   <div class="actions">
+    <%= f.submit "가입하기" ,:class =>'btn btn--form'%>
+  </div>
+  
+  
+  
+<% end %>
+    
+   <%= render "devise/shared/links" %>
+
+    
+  </div>
+</div>
+  
+  
+</body>
+</html>

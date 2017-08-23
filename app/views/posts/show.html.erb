@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<header>
+  <div class="container">
+  </div>
+  
+  <style>
+  h3{
+      
+  }
+  
+
+  </style>
+</header>
+
+<body  class="w3-light-grey">
+<br>
+<br>
+<br>
+
+
+<!--수정하고 있는 영역이에용 건드리면 미래 화남 -->
+  <div class="w3-container w3-white w3-margin w3-padding-large ">
+        <div class="w3-center">
+          <h3 style="text-shadow:1px 1px 0 #444" ><%= @post.title %></h3>
+          <h6><%= @post.created_at%></h6>
+          <h7>created_by.<%= @post_user.name %></h7>
+        </div>
+
+        <div class="w3-justify">
+          <center>
+          <% if @post.image.url %>
+             <img src="<%= @post.image.url %>">
+         <% end %>
+         
+          <p>
+            <br>
+            <strong>Content|</strong>
+              <%= @post.content %>
+          </p>
+          </center>
+        </div>
+         
+         <p class="w3-left"> 
+          <button class="w3-button w3-black"><%= link_to 'Back', posts_path %> </button>
+         </p>
+         
+         <p>
+         
+         <% if current_user.id == @post.user_id  %>
+          <p class="w3-left">
+            <button class="w3-button w3-black"><%= link_to 'Edit', edit_post_path(@post) %> </button>
+          </p>
+         <% end %>
+          
+          <p class="w3-right"><button class="w3-button " onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white"></span></button></p>
+         
+          <p class="w3-clear"></p>
+           <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+               <p> 
+        <h3>Comments</h3>
+        <!--코멘트 보기-->
+        
+          <ul id="comments">
+            <% @post.comments.each do |comment| %>
+              <%= render partial: "comments/item", locals: { comment: comment } %>
+            <% end %>
+          </ul> 
+      </p>
+      <!--코멘트 입력-->
+      <p> 
+        <%= form_for [@post, @post.comments.new], remote: true do |f| %>
+            <%= f.hidden_field :user_nickname, :value => current_user.nickname %>
+            <%= f.hidden_field :user_id, :value => current_user.id %> 
+            <%= f.text_area :content %>
+            <%= f.submit %>
+        <% end %>
+      </p>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function likeFunction(x) {
+    x.style.fontWeight = "bold";
+    x.innerHTML = "✓ Liked";
+}
+</script>
+      
+      </body>

@@ -1,0 +1,45 @@
+
+
+
+/* field   이메일.비밀번호 확인까지*/
+
+.field {
+  border-right: 1px solid rgba(153,153,153,.5);
+}
+
+/* .about__datum:last-child === .about__datum:nth-child(3) */
+.field:last-child {
+  border-right: none;
+}
+.field {
+  display: block;
+   font-family: 'Montserrat', sans-serif;
+  font-size: 1.133333rem;
+  line-height: 1.37;
+  text-align: center;
+  
+}
+
+
+.password {
+ 
+   text-align: center
+}
+
+/* 업데이트 버튼*/
+
+
+.actions {
+ 
+   text-align: center
+}
+
+.cancel {
+  text-align: center;
+  font-family: 'Kopub Batang', serif;
+}
+
+.back {
+ text-align: center;
+ font-family: 'Kopub Batang', serif;
+}

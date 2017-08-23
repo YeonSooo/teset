@@ -1,0 +1,54 @@
+<br>
+<br>
+<br>
+<br>
+  <link rel="stylesheet" herf="new.css">
+  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<!-- ---------------------------------------------------------------------->
+
+<%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    
+          <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+
+
+    <div class="field">
+        <br>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+    </div>
+    <div class="field">
+        <br>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+    </div>
+    
+    <center>
+        <div class="field">
+        <br>
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </div>
+    </center>
+    <br><br>
+    
+    
+     
+     <button type="submit" class="w3-button w3-black w3-round-xlarge">완료</button>
+<%end%>
